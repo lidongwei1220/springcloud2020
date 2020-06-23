@@ -1,17 +1,23 @@
 server:
   port: 3355
-
-spring:
+#http://config3344.com:3344/master/config-dev.yml     https://github.com/lidongwei1220/springcloud-config.git/config-dev.yml
+spring:        #https://github.com/lidongwei1220/springcloud-config/blob/master/config-dev.yml
   application:
     name: config-client
   cloud:
     config:
+      uri: http://127.0.0.1:3344
       label: master
       name: config
       profile: dev
-      uri: http://config3344.com:3344/
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:7001/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
