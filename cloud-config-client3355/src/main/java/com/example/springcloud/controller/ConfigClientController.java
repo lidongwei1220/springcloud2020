@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope     //发送(curl -X POST"http://localhost:3355/actuator/refresh")刷新，不需要重启
 public class ConfigClientController {
 
-//    @Value("${config.info}")
-//    private String configInfo;
+    @Value("${config.info}")
+    private String configInfo;
 
     @GetMapping("/configInfo")
     public String getConfigInfo() {
-        return "configInfo";
+        return configInfo;
     }
 }
